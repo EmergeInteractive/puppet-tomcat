@@ -77,7 +77,7 @@
 
 <% if not connectors.empty? -%>
 <% connectors.each do |conn| -%>
-    <!-- See conf/connector-<%= conn %>.xml for this connector's config. -->
+    <!-- See conf/connector <%= conn %>.xml for this connector's config. -->
     &connector-<%= conn %>;
 
 <% end -%>

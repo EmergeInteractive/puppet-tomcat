@@ -17,23 +17,23 @@ Usage:
 class tomcat::debian inherits tomcat::package {
 
   # avoid partial configuration on untested-debian-releases
-  if $lsbdistcodename !~ /^(lenny|squeeze)$/ {
-    fail "class ${name} not tested on ${operatingsystem}/${lsbdistcodename}"
-  }
+  #if $lsbdistcodename !~ /^(lenny|squeeze|)$/ {
+  #  fail "class ${name} not tested on ${operatingsystem}/${lsbdistcodename}"
+  #}
 
   $tomcat = "tomcat6"
   $tomcat_home = "/usr/share/tomcat6"
 
   # Workaround while tomcat-juli.jar and tomcat-juli-adapters.jar aren't
   # included in tomcat6-* packages.
-  include tomcat::juli
+  # include tomcat::juli
 
   # link logging libraries from java
-  include tomcat::logging
+  # include tomcat::logging
 
   Package["tomcat"] {
     name   => $tomcat,
-    before => [File["commons-logging.jar"], File["log4j.jar"], File["log4j.properties"]],
+    # before => [File["commons-logging.jar"], File["log4j.jar"], File["log4j.properties"]],
   }
 
   Service["tomcat"] {
