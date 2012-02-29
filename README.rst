@@ -121,7 +121,7 @@ virtualhost::
     ensure   => present,
     location => "/myapp",
     vhost    => "www.mycompany.com",
-    url      => "ajp://localhost:8000",
+    url      => "ajp://localhost:8000/",
   }
 
 
