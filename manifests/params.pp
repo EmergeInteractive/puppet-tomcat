@@ -41,7 +41,8 @@ class tomcat::params {
       "RedHat" => $lsbdistcodename ? {
         "Tikanga"  => "5.5",
         "Santiago" => "6",
-      }
+      },
+      "Ubuntu" => "6"
     }
 
     # it would be better to set the distribution tomcat-version!
