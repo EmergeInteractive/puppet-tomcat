@@ -91,8 +91,12 @@
 
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">         
-    --> 
+    -->
+<% if jvmRoute.empty? -%>
     <Engine name="Catalina" defaultHost="localhost">
+<% else %>
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="<%= jvmRoute %>">
+<% end -%>
 
       <!--For clustering, please take a look at documentation at:
           /docs/cluster-howto.html  (simple how to)
