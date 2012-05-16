@@ -18,7 +18,7 @@ Usage:
 class tomcat::redhat inherits tomcat::package {
 
   # avoid partial configuration on untested-redhat-release
-  if $lsbdistcodename !~ /^(Tikanga|Santiago)$/ {
+  if $::lsbdistcodename !~ /^(Tikanga|Santiago)$/ {
     fail "class ${name} not tested on ${operatingsystem}/${lsbdistcodename}"
   }
 
@@ -28,7 +28,7 @@ class tomcat::redhat inherits tomcat::package {
     ]: ensure => present 
   }
 
-  case $lsbdistcodename {
+  case $::lsbdistcodename {
 
     Tikanga: {
       $tomcat = "tomcat5"
