@@ -16,8 +16,8 @@ export CLASSPATH=<%= classpath %>
 
 export DSUN_JAVA2D_OPENGL="false"
 export DJAVA_AWT_HEADLESS="true"
-export JAVA_XMX="256m"
-export JAVA_XX_MAXPERMSIZE="256m"
+export JAVA_XMX="1024m"
+export JAVA_XX_MAXPERMSIZE="512m"
 
 <% setenv.each do |env| %>
 export <%= env -%>
